@@ -10,6 +10,7 @@
       body{margin:40px
       auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
       10px}h1,h2,h3{line-height:1.2}
+      img.resize{max-width:25%; max-height:25%;}
     </style>
       
     <meta name="viewport" content="width=device-width">
@@ -31,7 +32,7 @@
   Recently when I’ve been working in Active Directory Users and Computers in my admin VM I’ve noticed that my first interaction would take 5 or 10 seconds to register. A quick bit of googling suggested that disabling NETBIOS over TCP/IP would provide a quick workaround. Lo-and-behold this fixed it right up.
 </p>
 <p>
-  <img src="/images/Enabled NETBIOS.gif">
+  <img class="resize" src="/images/Enabled NETBIOS.gif">
 </p>
 <p> 
   To disable NETBIOS over TCP/IP just go to your NIC’s IPv4 properties, then Advanced, then, WINS, then disabled NETBIOS over TCP/IP.
