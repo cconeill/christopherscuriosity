@@ -28,9 +28,17 @@
 <a id="entry-title" class="anchor" href="/blog/2016/08/25/aduc-slow-netbios/" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AD Users and Computers slow; kill NETBIOS</h3>
 
 <p>
-  Text
-</p>
+  Recently when I’ve been working in Active Directory Users and Computers in my admin VM I’ve noticed that my first interaction would take 5 or 10 seconds to register. A quick bit of googling suggested that disabling NETBIOS over TCP/IP would provide a quick workaround. Lo-and-behold this fixed it right up.
 
+To disabled NETBIOS over TCP/IP just go to your NIC’s IPv4 properties, then Advanced, then, WINS, then disabled NETBIOS over TCP/IP.
+</p>
+</section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/cconeill">cconeill</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
