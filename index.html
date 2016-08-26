@@ -1,48 +1,93 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>christopherscuriosity by cconeill</title>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>rohan singh</title>
+  <meta name="author" content="Christopher O'Neill">
 
-    <style type="text/css">
-      body{margin:40px
-      auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:010px}
-      h1,h2,h3{line-height:1.2}
-      img.resize{max-width:100%; max-height:100%;}
-      p.bottomborder {border-bottom: 2px solid black;}
-    </style>
+  
+<meta name="description" content="AD Users and Computers running slowly; kill NETBIOS">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.christopherscuriosity.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="" rel="alternate" title="christopher o'neill" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- Readability verification tag -->
+<meta name="readability-verification" content="BKpt9BZpNwvvbutVafcSwvHCFpE5JMwrXBNdX9Ss"/>
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">christopher o'neill</a></h1>
+  
+    <h2>how i pass my time</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://twitter.com/Chris0Neill">Twitter</a></li>
+  <li><a href="https://www.linkedin.com/in/christopher-o-neill-3a407048">LinkedIn</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
       
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a ref="/">christophers curiosity</a></h1>
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/08/25/aduc-slow-netbios/">AD Users and Computers Slow? Kill NETBIOS</a></h1>
+    
+    
+      <p class="meta">
         
-      </header>
-      <section>
-<time datetime="2015-08-26" pubdate data-updated="true">August 26<span>th</span>, 2016</time>
-<h2>
-<a id="entry-title" class="anchor" href="#entry-title" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to kill a chicken quickly.
-</h2>
 
-<p class="bottomborder">
-  I've tried a lot of different slaughtering methods for chickens, knives, axes, neck-wringing, the list is long. But the easiest
-  by far has been to use a t-post to behead the chicken. 
-</p>
 
-<time datetime="2015-08-25" pubdate data-updated="true">August 25<span>th</span>, 2016</time>
-<h2>
-<a href="/blog/2016/08/25/aduc-slow-netbios" aria-hidden="true">AD Users and Computers slow; kill NETBIOS</a>
-</h3>
-<a id="entry-title" class="anchor" href="/blog/2016/08/25/aduc-slow-netbios/" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-</h2>
 
-<p>
+
+
+
+
+
+  
+
+
+<time datetime="2016-08-25" pubdate data-updated="true">August 25<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+<div class="entry-content">
+  <p>
   Recently when I’ve been working in Active Directory Users and Computers in my admin VM I’ve noticed that my first interaction would take 5 or so seconds to register. A quick bit of googling suggested that disabling NETBIOS over TCP/IP would provide a quick workaround. Lo-and-behold this fixed it right up.
 </p>
 <p>
@@ -57,19 +102,38 @@
     <img class="resize" src="/images/Disabled NETBIOS.gif">
   </a>
 </p>
-<p class="bottomborder"> 
+<p> 
   To disable NETBIOS over TCP/IP just go to your NIC’s IPv4 properties, then Advanced, then, WINS, then disabled NETBIOS over TCP/IP.
 <a href="/images/NETBIOS.PNG">
  <img class="resize" src="/images/NETBIOS.PNG">  
 </a>
+</p>
+</p>
+</div>
+</article>
 
-</section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/cconeill">cconeill</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
+
+ <div class="pagination">
+  <p>
+    Done
+  </p>
     
-  </body>
+  </div>
+</div>
+<aside class="sidebar">
+  
+    
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Christopher O'Neill -
+  <span class="credit">Powered by GitPages</span>
+</p>
+
+</footer>
+  
+</body>
 </html>
