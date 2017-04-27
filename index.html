@@ -120,45 +120,45 @@ updated="true">January 4<span>th</span>, 2017</time>
 	<div class="entry-content">
 	<p>
 		When I spied a recent budget line for Industry Weapon, a digital 
-
-signage company, I was surprised at how much we paid. We have tweleve or so digital 
-
-signs running on various models of Cisco DMPs and it all adds up to quite a bit. 
-
-Xibo is an open-source digital signage solution I'd seen recommended around 
-
-reddit.com/r/sysadmin so I figured I'd give it a shot.I did not find the various 
-
-guides, link or winlink, very helpful. Neither was complete or easily followed for 
-
-me and it ended up at a dead end. So here is my attempt at a novice level guide 
-
-(could I write anything other than a novice level guide?) for setting up Xibo in a 
-
-Windows  environment using IIS. I tried both Ubuntu with Apache and Windows Server 
-
-2016 with IIS; I'm a Next-pert so Windows was much easier for me in the end. Nearly 
-
-our whole environment is Windows so if this ever was put into production it would 
-
-be Windows so it could be managed by our team, powershell is too useful and no one 
-
-here has any expertise in Linux. 
 		
-		Overview
-		1. Install OS environment
-		2. Install pre-requesites
-			a. .Net Framework 3.5 and 4.X
-			b. IIS
-			c. PHP
-			d. MySQL
-		4. Xibo CMS
-		5. Xibo Client
-		
-		Install OS environment
-		Install Windows Server 2016 with Desktop Experience.
-		IMAGE
-		
+	signage company, I was surprised at how much we paid. We have tweleve or so digital 
+
+	signs running on various models of Cisco DMPs and it all adds up to quite a bit. 
+
+	Xibo is an open-source digital signage solution I'd seen recommended around 
+
+	reddit.com/r/sysadmin so I figured I'd give it a shot.I did not find the various 
+
+	guides, link or winlink, very helpful. Neither was complete or easily followed for 
+
+	me and it ended up at a dead end. So here is my attempt at a novice level guide 
+
+	(could I write anything other than a novice level guide?) for setting up Xibo in a 
+
+	Windows  environment using IIS. I tried both Ubuntu with Apache and Windows Server 
+
+	2016 with IIS; I'm a Next-pert so Windows was much easier for me in the end. Nearly 
+
+	our whole environment is Windows so if this ever was put into production it would 
+
+	be Windows so it could be managed by our team, powershell is too useful and no one 
+
+	here has any expertise in Linux. 
+	</p>
+	<h2>Overview</h2>
+	<ol>
+		<li>Install OS environment</li>
+		<li>Install pre-requesites</li>
+			<ol type="a">
+				<li>.Net Framework 3.5 and 4.X</li>
+				<li>IIS</li>
+				<li>PHP</li>
+				<li>MySQL</li>
+			</ol>
+		<li>Xibo CMS</li>
+		<li>Xibo Client</li>
+	</ol>
+	<p>
 		Install pre-requesites
 			a. Both .Net Framework 3.5 and 4.X are required. I had a 
 
@@ -167,17 +167,17 @@ problem installing PHP Manager and it turned out PHP Manager requires .Net
 Framework 3.5, Xibo requires 4.X and at the time of this writing 4.6.2 is the 
 
 version I installed.
-		<a href="/images/netframework.png">
-			<img class="resize" src="/images/netframework.png">
-		</a>
+		<a href="/images/netframework.png"><img class="resize" src="/images/netframework.png"></a>
+	</p>
+	<p>
 			b. IIS, ensure CGI under Application Development is 
 
 checked. I'm not 100% positive a restart is required after a. and b. but I 
 
 performed one anyway.
-		<a href="/images/IIS.png">
-			<img class="resize" src="/images/IIS.png">
-		</a>
+		<a href="/images/IIS.png"><img class="resize" src="/images/IIS.png"></a>
+	</p>
+	<p>
 			c. PHP v5.3.28 is what I ended up installing. v7 might 
 
 work, but it didn't on Ubuntu so when it came time to install on Windows I went 
@@ -191,15 +191,9 @@ to decimal value 8 in order for PHP Manager to install. You can revert it back t
 10 after installation. (link http://stackoverflow.com/questions/21216228/php-
 
 manager-for-iis-fails-to-install)
-		<a href="/images/msftplatform.png">
-			<img class="resize" src="/images/msftplatform.png">
-		</a>
-		<a href="/images/phpinstalls.png">
-			<img class="resize" src="/images/phpinstalls.png">
-		</a>
-		<a href="/images/majorversion.png">
-			<img class="resize" src="/images/majorversion.png">
-		</a>
+		<a href="/images/msftplatform.png"><img class="resize" src="/images/msftplatform.png"></a>
+		<a href="/images/phpinstalls.png"><img class="resize" src="/images/phpinstalls.png"></a>
+		<a href="/images/majorversion.png"><img class="resize" src="/images/majorversion.png"></a>
 			The following configuraiton of PHP was lifted from (link 
 
 http://xibo.org.uk/manual/en/install_environment_windows_iis.html ), I'm not sure 
@@ -221,52 +215,30 @@ set to 300 seconds and removed the ';', 256M, and 256M respectively.
 
 		
 			Restart server after making the above configuration.
-			d. Download MySQL installer for Windows, install Server 
-
-Only option. 
-		<a href="/images/mysql1.png">
-			<img class="resize" src="/images/mysql1.png">
-		</a>
-			   Select Config Type Server Machine, check Named Pipe, 
-
-Shared Memory and Show Advanced Options.
-		<a href="/images/mysql2.png">
-			<img class="resize" src="/images/mysql2.png">
-		</a>
+	</p>
+	<p>
+			d. Download MySQL installer for Windows, install Server Only option. 
+		<a href="/images/mysql1.png"><img class="resize" src="/images/mysql1.png"></a>
+			   Select Config Type Server Machine, check Named Pipe, Shared Memory and Show Advanced Options.
+		<a href="/images/mysql2.png"><img class="resize" src="/images/mysql2.png"></a>
 			   Enter in root account password.
-		<a href="/images/mysql3.png">
-			<img class="resize" src="/images/mysql3.png">
-		</a>
+		<a href="/images/mysql3.png"><img class="resize" src="/images/mysql3.png"></a>
 			   Defaults on Windows Service tab is fine.
 			   Defaults for Plugins and Extensions are fine
 			   Check General Log and Bin Log in Advanced Options
 			   Execute and finish installation. Restart server.
-		
+	</p>
+	<p>	
 		Xibo CMS
-			Download Xibo CMS .zip and extract it to C:\inetpub
-
-\wwwroot; rename the folder to just Xibo.
-			Open IIS and select Sites>Default Web Site>Xibo then Browse 
-
-*:80 (http) on the right. After all of the configuration above I recieved 
-
-checkmarks on all pre-requesites for installation except for File System 
-
-Permissions. An exclamation point for Internationalization was received, this was 
-
-not important for me.
-			To resolve the File System Permissions I ran into a bit of 
-
-trouble but the solution ended up being very simple, give Modify permisions to 
-
-Users, or whichever user will be launching IIS.
-		<a href="/images/filepermissions.png">
-			<img class="resize" src="/images/filepermissions.png">
-		</a>
+			Download Xibo CMS .zip and extract it to C:\inetpub\wwwroot; rename the folder to just Xibo.
+			Open IIS and select Sites>Default Web Site>Xibo then Browse*:80 (http) on the right. After all of the configuration above I recieved 
+			checkmarks on all pre-requesites for installation except for File System Permissions. An exclamation point for Internationalization was received, this was 
+			not important for me. To resolve the File System Permissions I ran into a bit of 
+			trouble but the solution ended up being very simple, give Modify permisions to 
+			Users, or whichever user will be launching IIS.
+		<a href="/images/filepermissions.png"><img class="resize" src="/images/filepermissions.png"></a>
 			Enter information about database
-			Create library, I used C:\XiboLibrary, give modify 
-
-permissions to .\Users
+			Create library, I used C:\XiboLibrary, give modify permissions to .\Users
 			You're done!
 					
 	</p>
@@ -284,17 +256,6 @@ permissions to .\Users
     
       <p class="meta">
         
-
-
-
-
-
-
-
-
-  
-
-
 <time datetime="2016-08-25" pubdate data-updated="true">August 25<span>th</span>, 2016</time>
         
       </p>
@@ -307,21 +268,15 @@ permissions to .\Users
 </p>
 <p>
   Here is the interaction with NETBIOS enabled, note that first click takes around four seconds to register but subsequent clicks register normally:
-  <a href="/images/Enabled NETBIOS.gif">
-    <img class="resize" src="/images/Enabled NETBIOS.gif">
-  </a>
+  <a href="/images/Enabled NETBIOS.gif"><img class="resize" src="/images/Enabled NETBIOS.gif"></a>
 </p>
 <p>
   Here is the interaction with NETBIOS disabled, note that first click registers immediately:
-  <a href="/images/Disabled NETBIOS.gif"> 
-    <img class="resize" src="/images/Disabled NETBIOS.gif">
-  </a>
+  <a href="/images/Disabled NETBIOS.gif"><img class="resize" src="/images/Disabled NETBIOS.gif"></a>
 </p>
 <p> 
   To disable NETBIOS over TCP/IP just go to your NIC’s IPv4 properties, then Advanced, then, WINS, then disabled NETBIOS over TCP/IP.
-<a href="/images/NETBIOS.PNG">
- <img class="resize" src="/images/NETBIOS.PNG">  
-</a>
+<a href="/images/NETBIOS.PNG"><img class="resize" src="/images/NETBIOS.PNG"></a>
 </p>
 </p>
 </div>
