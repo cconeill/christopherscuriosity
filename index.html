@@ -26,6 +26,17 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
 </head>
+<script>
+	// Initialize the agent once at web application startup.
+	// Alternatively initialize as early on the page as possible.
+	const fpPromise = import('https://fpjscdn.net/v3/your-public-api-key')
+	  .then(FingerprintJS => FingerprintJS.load())
+  
+	// Analyze the visitor when necessary.
+	fpPromise
+	  .then(fp => fp.get())
+	  .then(result => console.log(result.requestId, result.visitorId))
+  </script>
 
 <body class="collapse-sidebar sidebar-footer" >
   <header role="banner"><hgroup>
